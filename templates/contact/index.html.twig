@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+    <h2>Contacts</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            {% for property in properties %}
+                <th>{{ property.name }}</th>
+            {% endfor %}
+        </tr>
+        <tr>
+            {% for contact in contacts %}
+            <td>  {{ contact.id }} </td>
+            {% for property in contact.properties %}
+                <td> {{ property }} </td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+
+
+    </table>
+
+{% endblock %}

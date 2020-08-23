@@ -42,6 +42,16 @@ class Contact
         return $this->contactProperties;
     }
 
+    public function getContactPropertyValueByPropertyId(int $pid): string
+    {
+        foreach ($this->contactProperties as $property) {
+            if ($property->getProperty()->getId() === $pid) {
+                return $property->getValue();
+            }
+        }
+        return '';
+    }
+
     public function addContactProperty(ContactProperty $contactProperty): self
     {
         if (!$this->contactProperties->contains($contactProperty)) {
