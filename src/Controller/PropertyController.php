@@ -39,7 +39,7 @@ class PropertyController extends AbstractController
             $this->em->persist($property);
             $this->em->flush();
 
-            return $this->redirectToRoute('contact');
+            return $this->redirectToRoute('contacts');
         }
 
         return $this->render('property/new.html.twig', [

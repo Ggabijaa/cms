@@ -3,9 +3,12 @@
 namespace App\Controller;
 
 use App\Entity\Contact;
+use App\Entity\ContactProperty;
 use App\Entity\Property;
+use App\Form\ContactPropertyType;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 
 class ContactController extends AbstractController
@@ -21,7 +24,7 @@ class ContactController extends AbstractController
     }
 
     /**
-     * @Route("/contact", name="contact", methods={"GET"})
+     * @Route("/contacts", name="contacts", methods={"GET"})
      */
     public function findAll()
     {
